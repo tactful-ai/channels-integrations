@@ -1,3 +1,13 @@
+# sms-integration
+This project aims to build a communication way between businesses and their customers in SMS channel as a follow-up channel by integrating it into Dstny Engage's current system.
+
+Using Twilio API as a third-party API that provides virtual phone numbers that send SMS messages 
+and also provides SDK to facilitate Sending and Receiving messages operations and setting up needed configurations
+and Dashboard for linking a webhook and Setting a SenderID (custom name) appear to customers.
+
+![SMS Service - Sequence Diagram](https://github.com/tactful-ai/channels-integrations/assets/89147029/f3c89555-a6b6-4aca-bc3a-2e60f0583d17)
+
+
 ## service/listen_bus.ts
 
 This module sets up a message bus using Tactful utils SDK and handles incoming messages for SMS communication.
@@ -6,7 +16,7 @@ This module sets up a message bus using Tactful utils SDK and handles incoming m
 
 - `startBus()`
 
-  This function starts the message bus and sets up event listeners to handle incoming messages. It consumes messages from the bus and listens for the event "tactful.reply". When a "tactful.reply" message is received, it checks if the message is an SMS,then extracts the text and customer phone number from the message, and calls the `sendingMessage` function to send an SMS message.
+  This function starts the message bus and sets up event listeners to handle incoming messages. It consumes messages from the bus and listens for the event "tactful.reply". When a "tactful.reply" message is received, it checks if the message is an SMS, then extracts the text and customer phone number from the message, and calls the `sendingMessage` function to send an SMS message.
 
 ## sms/sendingMessage.ts
 
